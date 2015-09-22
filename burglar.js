@@ -105,7 +105,22 @@ var HELLO = [].map.call('hello', function(element){
 
 console.log(HELLO) //this will return an array-like string. 
 
+//--------------------------
 
 
+var bob = {
+	name: 'Bob'
+}
+//bind returns a new function
+//bobSaysHi is exactly the same as whatsMyName, but all references to 'this' are replaced with bob
+var bobSaysHi = whatsMyName.bind(bob)
+// var aliceSaysHi = bobSaysHi.bind(alice)
+//pass in arguments as usual. A bound function call looks similar to a normal function call. Permanently bound.
+bobSaysHi(true, 'secondArg', 'thirdArg', 'fourthArg')
+aliceSaysHi()
 
+var carlos = {
+	name: 'Carlos'
+}
 
+var carlosIsHappyToMeetYou = whatsMyName.bind(carlos, true)
